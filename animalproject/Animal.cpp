@@ -50,3 +50,24 @@ void Animal::setDomestic(){
 void Animal::setPredator(){
   predator_ = true;
 }
+
+//goes through all the possibilities of domestic and predator combinations and prints out statement to concatenate into string w/ name of animal
+/*
+void Animal::display(){
+  std::string statement = "";
+  if (!domestic_ && !predator_){
+    statement = " is not domestic and is not a predator";
+  }else if (!domestic_ && predator_){
+    statement = " is not domestic and it is a predator";
+  } else if (domestic_ && !predator_){
+    statement = " is domestic and is not a predator";
+  }else{
+    statement = "is domestic and it is a predator";
+  }
+  std::cout << getName() << statement << std::endl;
+}
+*/
+//comparison operator so that frog doesn't get added twice
+bool Animal::operator==(const Animal &animal1) const{
+	 return name_ == animal1.name_;
+ }

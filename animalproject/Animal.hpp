@@ -6,7 +6,6 @@
 #pragma once
 // #ifndef ANIMAL_HPP_
 // #define ANIMAL_HPP_
-#include <iostream>
 #include <string>
 // #include "Animal.hpp"
 
@@ -21,8 +20,10 @@ class Animal{
     void setName(std::string name);
     void setDomestic();
     void setPredator();
+    virtual void display() const = 0; //setting to 0 makes it a pure virtual and allows polymorphism
+    bool operator==(const Animal &animal1) const; //add operator to compare
 
-  private: //private members belong in private class
+  protected: //private members belong in private class
     std::string name_;
     bool domestic_;
     bool predator_;
